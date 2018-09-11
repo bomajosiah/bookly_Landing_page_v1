@@ -321,15 +321,21 @@ input:focus {
     .logo {
         width: 100px;
     }
+    .nav-links {
+        padding: 0 10px !important
+    }
     .links {
         display: grid;
         list-style: none;
         text-align: right;
-        width: 100%;
-        margin: 0 !important;
+        width: 50%;
+        margin: 20px 0 !important;
         padding: 0 10px;
         background-color: #fff;
         box-shadow: 3px 3px 3px #f2f5f7
+    }
+    .collapse {
+        width: 100%;
     }
     .links li {
         display: inline;
