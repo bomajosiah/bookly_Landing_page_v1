@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bookly</title>
+<meta name="description" content="Bookly! An online educational resource center with school curriculum tailored courses for senior secondary school students">
+<meta name="author" content="Ariyo Olawale">
+<meta name="keywords" content="E-books, ssce past questions, waec past questions, ss1 text books, ss2 text books">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+<!-- <link rel="stylesheet" href="./style.css"> -->
+<!-- animated scrolling effects -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css"> -->
+    <!-- <script>
+            AOS.init();
+        </script> -->
+</head>
+<body>
+    <div id="app">
+    
+        <div class="nav row navbar navbar-expand-sm nav">
+            <div  class="nav-img col-xs-2 col-md-2">
+                <img src="./assets/logo.svg" alt="site logo" class="logo">
+                    <button class="navbar-toggler menu-btn" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                      <img src="./assets/menu.svg" alt="" width="20px" height="20px">
+                    </button>
+            </div>
+            <div class="nav-links col-xs-10 col-md-10">
+                <div class="collapse navbar-collapse" id="navbarsExample03">
+                    <ul class="links">
+                        <li><b><a href="#features">Features</a></b></li>
+                        <li><b><a href="#contact">Contact</a></b></li>
+                        <li><b><a href="https://booklyapp.co/blog">Blog</a></b></li>
+                        <li>
+                            <a href="#signup">
+                                <button class="main-btn" @click="add()">
+                                  Sign Up
+                                </button>
+                            </a>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="nav row">
+            <div  class="nav-img col-xs-2 col-md-2">
+                <img src="./assets/logo.svg" alt="site logo" class="logo">
+            </div>
+            <div class="nav-links col-xs-10 col-md-10">
+                <button class="main-btn" @click="add()">
+                    Sign Up
+                </button>
+                <ul class="links">
+                    <li><b><a href="http://">Features</a></b></li>
+                    <li><b><a href="">Contact</a></b></li>
+                    <li><b><a href="http://booklyapp.co/blog">Blog</a></b></li>
+                </ul>
+            </div>
+        </div> -->
+        <div class="row row-one">
+            <div class=" col-sm-12 col-lg-6 top row-text" data-aos="fade-right">
+                <span class="title">
+                    <b>
+                        Study smart. Not hard.
+                    </b>
+                </span><br><br>
+                <span class="next-text">
+                        Read books, take quizzes and learn topics from your school subjects - all with your smartphone. It’s a fun and easy way to learn!
+                </span>
+                <div class="google-play col-md-12">
+                    <p class="launch">Available soon!</p>
+                    <img src="./assets/play.svg" alt="">
+                </div>
+                <div class="input" id="input">
+                    <p class="launch">Be the first to know when we launch!</p>
+                    <input type="tel" id="myText" placeholder="Phone number">
+                    <button class="main-btn" onclick="sendDetails()">
+                        Count Me In
+                    </button> <br><br>
+                </div>
+                <div id="loader">
+                    <img src="./assets/loader.svg" alt="" width="20px">
+                </div>
+                <div class="col-md-12 success" id="error" data-aos="fade-down">
+                    <span class="ec ec-cold-sweat"></span> please enter a valid phone number
+                </div>
+                <div class="col-md-12 success" id="success" data-aos="fade-down">
+                    <img src="./assets/check-green.png" alt="">Awesome! you are now on our list
+                </div>
+                <div class="col-md-12 success" id="error20" data-aos="fade-down">
+                    <img src="./assets/check-green.png" alt="">You are already signed up.
+                </div>
+            </div>
+            <div class=" col-sm-12 col-lg-6">
+                <img src="./assets/ph1.svg" alt="phone one"  class="phone" data-aos="fade-down">
+            </div>
+        </div>
+        <div class="row row-two" id="features">
+            <div class="col-lg-6  first">
+                <img src="./assets/ph2.svg" alt="phone one"  class="phone" data-aos="fade-right">
+            </div>
+            <div class="col-lg-6  row-text last" data-aos="fade-left">
+                <h3><b>Read</b></h3><br>
+                <span class="next-text">
+                    With all your books in your pocket, you can read anywhere, anytime and get ahead. Its that easy.
+                </span>
+                <div class="highlights">
+                    <p><img src="./assets/check-blue.png" alt="">Find books on all your subjects</p>
+                    <p><img src="./assets/check-blue.png" alt="">Take notes on your device as you study</p>
+                    <p><img src="./assets/check-blue.png" alt="">Keep reading even while you are offline</p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-one">
+            <div class="col-lg-6   row-text" data-aos="fade-up-right">
+                <span class="title">
+                    <b>
+                        Learn
+                    </b>
+                </span><br><br>
+                <span class="next-text">
+                   Topics are broken down into simple steps that you can follow with articles, video tutorials and quizzes.
+                </span>
+                <div class="highlights">
+                    <p><img src="./assets/check-blue.png" alt="">Bite-sized articles written with you in mind</p>
+                    <p><img src="./assets/check-blue.png" alt="">Video tutorials with transcripts</p>
+                    <p><img src="./assets/check-blue.png" alt="">Quizzes to test your understanding of the topic</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="./assets/ph4.svg"  aos="flip-down" alt="phone one"  class="phone" data-aos="fade-left">
+            </div>
+        </div>
+        <div class="row row-two">
+            <div class="col-lg-6 first">
+                <img src="./assets/ph5.svg" alt="phone one"  class="phone" data-aos="fade-right">
+            </div>
+            <div class="col-lg-6  row-text last" data-aos="fade-up-left">
+                <h3><b>Grow</b></h3><br>
+                <span class="next-text">
+                    The more time you spend on Bookly, the more levels of achievement you unlock. Learning is so much fun.
+                </span>
+                <div class="highlights">
+                    <p><img src="./assets/check-blue.png" alt="">Go from Beginner to Lord</p>
+                    <p><img src="./assets/check-blue.png" alt="">Share your progress with friends on social media</p>
+                    <p><img src="./assets/check-blue.png" alt="">Improve your grades and better your future</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 bottom-row" id="signup">
+            <div class="blue-content">
+                <p class="bottom-launch"><b>Be the first to know when we launch!</b></p>
+                <div id="input2">
+                    <div class="">
+                        <input type="tel"  class="bottom-input" id="myText2" placeholder="Phone number">
+                        <button class="sec-btn" onclick="sendDetails2()">
+                            <b>Count Me In</b>
+                        </button> <br><br>
+                    </div>
+                </div>
+                <div class="btm-loader" id="loader2">
+                    <img src="./assets//loader2.svg" alt="" width="20px">
+                </div>
+                <div class="col-md-12" id="success2">
+                    <img src="./assets/Outline.svg" class="btm-img" alt="">
+                     <b>Awesome! you are now on our list</b>
+                </div>
+                <div class="col-md-12 success" id="error2" data-aos="fade-down">
+                    <span class="ec ec-cold-sweat"></span> please enter a valid phone number
+                </div>
+                <div class="col-md-12 success" id="error22" data-aos="fade-down">
+                    You are already signed up.
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <img src="./assets/bags.jpg" alt="" class="bottom-row-img">
+            </div>
+            <div class="col-md-12 footer" id="contact">
+                <p><b>Connent with us to stay updated</b></p>
+                <a href="https://www.facebook.com/Bookly-App-1202173179920677/"><img src="./assets/facebook.png" alt=""></a> <a href="https://instagram.com/bookly_app"><img src="./assets/instagram.png" alt=""></a> 
+                <a href="https://wa.me/+2349058044362"><img src="./assets/whatsapp.png" alt=""></a> <a href="https://twitter.com/app_bookly"><img src="./assets/twitter.png" alt=""></a> 
+                <a href="mailto:boma@booklyapp.co"><img src="./assets//email.png" alt=""></a> 
+                <div class="col-xs-4 offset-xs-4 col-md-2 offset-md-5 copy">
+                    2018 Bookly App
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- include VueJs in our app via a CDN -->
+    <!-- <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script> -->
+    <!-- <script src="./index.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      AOS.init({
+        easing: 'ease-in-out-sine',
+        duration: 1500
+      });
+      function sendDetails () {
+        //   alert('clicked')
+        document.getElementById('input').style.display = 'none'
+        document.getElementById('loader').style.display = 'block'
+        var detail = document.getElementById("myText").value;
+        console.log(detail)
+        axios.post('https://bookly-edtech.herokuapp.com/api/v1/user/signup', {'phone': detail})
+        .then(function (response) {
+            console.log(response);
+            document.getElementById('success').style.display = "block"
+            document.getElementById('error20').style.display = "none"
+            document.getElementById('error').style.display = "none"
+            document.getElementById('loader').style.display = 'none'
+            // document.getElementById("myText").value = ''
+        })
+        .catch(function (error) {
+            console.log(error);
+            if (error.response.status === 409) {
+                document.getElementById('input').style.display = 'none'
+                document.getElementById('error').style.display = 'none'
+                document.getElementById('error20').style.display = 'block'
+                document.getElementById('success').style.display = "none"
+                document.getElementById('loader').style.display = 'none'
+            } else if (error.response.status === 401) {
+                document.getElementById('input').style.display = 'block'
+                document.getElementById('error20').style.display = 'none'
+                document.getElementById('success').style.display = "none"
+                document.getElementById('error').style.display = 'block'
+                document.getElementById('loader').style.display = 'none'
+            }
+        });
+      }
+      function sendDetails2 () {
+        //   alert('clicked')
+        document.getElementById('input2').style.display = 'none'
+        document.getElementById('loader2').style.display = 'block'
+        var detail = document.getElementById("myText2").value;
+        console.log(detail)
+        axios.post('https://bookly-edtech.herokuapp.com/api/v1/user/signup', {'phone': detail})
+        .then(function (response) {
+            console.log(response);
+                document.getElementById('error22').style.display = 'none'
+                document.getElementById('error2').style.display = "none"
+                document.getElementById('success2').style.display = "block"
+                document.getElementById('loader2').style.display = 'none'
+        })
+        .catch(function (error) {
+            console.log(error.response);
+            if (error.response.status === 409) {
+                document.getElementById('error22').style.display = 'none'
+                document.getElementById('input2').style.display = 'block'
+                document.getElementById('error2').style.display = "none"
+                document.getElementById('success2').style.display = "none"
+                document.getElementById('loader2').style.display = 'none'
+            } else if (error.response.status === 401) {
+                document.getElementById('error2').style.display = "block"
+                document.getElementById('input2').style.display = 'block'
+                document.getElementById('success2').style.display = "none"
+                document.getElementById('error22').style.display = 'none'
+                document.getElementById('loader2').style.display = 'none'
+                
+            }
+        });
+      }
+
+     //Smooth scrolling with links
+     $('a[href*=#]').click(function(event){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    event.preventDefault();
+});
+    </script>
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+    <!-- <script src="./Bootstrap/js/bootstrap.min.js"></script> -->
+    <!-- Jquery cdn -->
+    <!-- <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script> -->
+</body>
+</html>
